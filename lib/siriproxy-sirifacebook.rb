@@ -388,17 +388,16 @@ end
 #with your pofilepicture, your name, your gender, your birthday, your facebook link, your facebook ID
 #Finished--
 listen_for /my facebook profile/i do
-     userjson = HTTParty.get("https://graph.facebook.com/me?fields=link,id,name,picture,birthday,gender&access_token=#{self.access_token}").body rescue nil #profile informations
+     userjson = HTTParty.get("https://graph.facebook.com/me?fields=link,id,name,picture,gender&access_token=#{self.access_token}").body rescue nil #profile informations
   
 user = JSON.parse(userjson) rescue nil
 name = "#{user['name']}"
 id = "#{user['id']}"
-birthday = "#{user['birthday']}"
 link = "#{user['link']}"
 gender = "#{user['gender']}"
 profilepicture = "#{user['picture']}"
  
-say "I found that for you:", spoken: "Name: #{user['name']}, Gender: #{user['gender']}, Birthday: #{user['birthday']}, Link: #{user['link']}"
+say "I found that for you:", spoken: "Name: #{user['name']}, Gender: #{user['gender']}, Link: #{user['link']}"
 
         object = SiriAddViews.new
         object.make_root(last_ref_id)
@@ -406,7 +405,6 @@ say "I found that for you:", spoken: "Name: #{user['name']}, Gender: #{user['gen
                             SiriAnswerLine.new('your profilpicture', profilepicture), #profile picture
                             SiriAnswerLine.new('Name: ' + name),
                             SiriAnswerLine.new('Gender: ' + gender),
-                            SiriAnswerLine.new('Birthday: ' + birthday),
                             SiriAnswerLine.new('Link: ' + link),
                             SiriAnswerLine.new('ID: ' + id)
                             ])
