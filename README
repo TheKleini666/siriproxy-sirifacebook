@@ -1,0 +1,134 @@
+This is a Siriproxy plugin called 'Facebook for Siri'.
+
+Video: [Video here]
+
+How to install:
+
+Video: [Video here]
+
+
+
+place that in your config.yml:
+
+    - name: 'Facebook for Siri'
+      git: 'git://github.com/TheKleini666/siriproxy-sirifacebook.git'
+      access_token: 'your_access_token'
+      username: 'your_username'
+
+
+You can get your access token from http://developers.facebook.com/tools/explorer
+But first watch the video. I teach you how to install it.
+Persmissions you need:
+-user_likes
+-user_notes
+-manage_notifications
+-publish_stream
+-status_update
+-read_friendlists
+-read_requests
+-share_item
+-create_note
+-manage_friendlists
+
+WHEN I UPDATE THIS SIRIPROXY PLUGIN AND I ADD NEW COMMANDS, I ADD ALSO NEW PERSMISSIONS!!!
+
+
+Commands:
+
+"Create facebook friend list"
+You: "Create facebook friend list lalalal
+Siri: You want to crat a facebook friendlist called lalala
+If you confirm siri will say: Sending to facebook, and after making the friendlist, siri will say Your friendlist has been made.
+Finished-- (Works)
+
+"What's my latest wall post"
+siri shows you your latest wall post
+For Example:
+You: What's my latest wall post?
+Siri: Your latest wall post is: blablabla
+Finished-- (Works)
+
+"Check facebook requests"
+Siri checs your requests, nothing more to say...
+For Example:
+You: Check facebook requests
+Siri: 'You have no new friend requests' or 'You have new friend requests'
+Finished-- (Works)
+
+"Make a facebook note"
+Siri makes a facebook note for you
+For example:
+You: make a facebook note blablabla
+Siri: What's the subject of your note?
+You: lalala
+Siri: Here is your note:
+then a SiriAddViews appears (The same frame like WoflramAlpha)
+With your subject and your text
+Siri: Ready to send it?
+You: Yes
+Siri: Posting to facebok...
+If you say no, siri will say Ok, I won't send it
+Finished-- (Works)
+
+"Share link on facebook"
+Siri shares a link you want on facebook
+You: Share link on facebook www.revolution-apps.com
+Siri: Here is your preview:
+then a SiriAddViews appears (The same frame like WoflramAlpha)
+With the link you have chosen
+Siri: Ready to send it?
+You: Yes
+Siri: Posting to facebok...
+If you say no, siri will say Ok, I won't send it
+Finished-- (Works)
+
+"My facebook friends"
+Siri will show you your facebook friends
+You: my facebook friends
+Siri will send you a list of your friends using a SiriAddViews (The same frame like WoflramAlpha)
+Finished-- (Works)
+
+"My facebook likes"
+Siri will show you your facebook likes
+You: my facebook likes
+Siri will send you a list of your likes using a SiriAddViews (The same frame like WoflramAlpha) 
+Finished-- (Works)
+
+"Check facebook notifications"
+Siri checks your facebook notifications
+You: Check facebook notifications
+Siri: Checking facebook notifications...
+Siri: 'You have no new notification' or 'You have 1 new notification and what notification it is' or 'You have ... new notifications and what notifications'
+Credits: Ross Waycaster (made this command)
+Finished-- (Works)
+
+"Facebook status"
+Siri shares a status you want on facebook
+You: Facebook status lalalalal
+Siri: Here is your preview:
+then a SiriAddViews appears (The same frame like WoflramAlpha)
+With your status
+Siri: Ready to send it?
+You: Yes
+Siri: Posting to facebok...
+If you say no, siri will say Ok, I won't send it
+Credits: Shabbir (made this command)
+Finished-- (Works)
+
+"My facebook profile"
+Siri will give you, some informations about you
+You: My facebook profile
+Siri: I found that for you:
+then a SiriAddViews appears (The same frame like WoflramAlpha)
+with your pofilepicture, your name, your gender, your birthday, your facebook link, your facebook ID
+Finished-- (Works)
+
+"What's my access token"
+Siri says your facebook access token
+You: What's my access token
+Siri: Your Facebook access token is: 'and your acces token'
+Finished-- (Works)
+
+"About facebook for siri"
+Nothing more to say :)
+Finished-- (Works)
