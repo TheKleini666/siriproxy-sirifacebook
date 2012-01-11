@@ -10,10 +10,10 @@ Video: [Video here]
 
 place that in your config.yml:
 
-    - name: 'Facebook for Siri'
+    - name: 'Sirifacebook'
       git: 'git://github.com/TheKleini666/siriproxy-sirifacebook.git'
       access_token: 'your_access_token'
-      username: 'your_username'
+      username: 'your_username_or_ID'
 
 
 You can get your access token from http://developers.facebook.com/tools/explorer
