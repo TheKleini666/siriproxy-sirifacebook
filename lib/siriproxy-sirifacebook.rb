@@ -428,14 +428,14 @@ end
 #Nothing more to say :)
 #
 #Finished--
-listen_for /about facebook for siri/i do
+listen_for /about Siri facebook/i do
 
-say "I found that for you:", spoken: "Name: Facebook for siri, Version: 0.0.1 (First release), Developer: TheKleini666 (Revolution-Apps.com), Homepage: http://revolution-apps.com, Support: support@revolution-apps.com and TheKleini666@revolution-apps.com"
+say "I found that for you:", spoken: "Name: SiriFacebook, Version: 0.0.1 (First release), Developer: TheKleini666 (Revolution-Apps.com), Homepage: http://revolution-apps.com, Support: support@revolution-apps.com and TheKleini666@revolution-apps.com"
 
         object = SiriAddViews.new
         object.make_root(last_ref_id)
-        answer = SiriAnswer.new("About facebook for siri:", [
-                            SiriAnswerLine.new('Name: Facebook for siri'),
+        answer = SiriAnswer.new("About SiriFacebook:", [
+                            SiriAnswerLine.new('Name: SiriFacebook'),
                             SiriAnswerLine.new('Version: 0.0.1 (First release)'),
                             SiriAnswerLine.new('Developer: TheKleini666 (Revolution-Apps.com)'),
                             SiriAnswerLine.new('Homepage: http://revolution-apps.com'),
