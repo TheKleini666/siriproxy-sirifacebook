@@ -436,7 +436,7 @@ say "I found that for you:", spoken: "Name: SiriFacebook, Version: 0.0.1 (First 
         object.make_root(last_ref_id)
         answer = SiriAnswer.new("About SiriFacebook:", [
                             SiriAnswerLine.new('Name: SiriFacebook'),
-                            SiriAnswerLine.new('Version: 0.0.1 (First release)'),
+                            SiriAnswerLine.new('Version: 0.0.1.1'),
                             SiriAnswerLine.new('Developer: TheKleini666 (Revolution-Apps.com)'),
                             SiriAnswerLine.new('Homepage: http://revolution-apps.com'),
                             SiriAnswerLine.new('Support:'),
