@@ -28,7 +28,7 @@ listen_for /create facebook friend list (.+)/i do |friendlist|
         Thread.new {
             begin
                 page = HTTParty.post(
-                                     "https://graph.facebook.com/me/friendlists",
+                                     "https://graph.facebook.com/#{self.username}/friendlists",
                                      :query => {
 				     :name => (friendlist),
                                      :access_token => (access_token)
@@ -59,7 +59,7 @@ end
 #Siri: Your latest wall post is: blablabla
 #Finished--
 listen_for /what's my latest wall post/i do
-	notificationspage = HTTParty.get("https://graph.facebook.com/me/feed?fields=name,message&access_token=#{self.access_token}&limit=1").body rescue ni
+	notificationspage = HTTParty.get("https://graph.facebook.com/#{self.username}/feed?fields=name,message&access_token=#{self.access_token}&limit=1").body rescue ni
 	notifications = JSON.parse(notificationspage) rescue nil
 
 	notifications['data'].each do |data|
@@ -78,7 +78,7 @@ end
 #Siri: 'You have no new friend requests' or 'You have new friend requests'
 #Finished--
 listen_for /check facebook requests/i do
-	requestspage = HTTParty.get("https://graph.facebook.com/me/friendrequests&access_token=#{self.access_token}").body rescue ni
+	requestspage = HTTParty.get("https://graph.facebook.com/#{self.username}/friendrequests&access_token=#{self.access_token}").body rescue ni
 	requests = JSON.parse(requestspage) rescue nil
 
 	answer = "You have no new friend requests."
@@ -165,7 +165,7 @@ listen_for /make a facebook note (.+)/i do |notetext|
         Thread.new {
             begin
                 page = HTTParty.post(
-                                     "https://graph.facebook.com/me/notes",
+                                     "https://graph.facebook.com/#{self.username}/notes",
                                      :query => {
                                      :subject => (subject),
 				     :message => (notetext),
@@ -208,7 +208,7 @@ listen_for /share link on facebook (.+)/i do |link|
         Thread.new {
             begin
                 page = HTTParty.post(
-                                     "https://graph.facebook.com/me/feed",
+                                     "https://graph.facebook.com/#{self.username}/feed",
                                      :query => {
                                      :link => (link),
                                      :access_token => (access_token)
@@ -234,7 +234,7 @@ end
 #Siri will send you a list of your friends using a SiriAddViews (The same frame like WoflramAlpha)
 #Finished--
 listen_for /my facebook friends/i do     
-     	  page = HTTParty.get("https://graph.facebook.com/me/friends&access_token=#{self.access_token}").body rescue nil
+     	  page = HTTParty.get("https://graph.facebook.com/#{self.username}/friends&access_token=#{self.access_token}").body rescue nil
           friends = JSON.parse(page) rescue nil
 
 	friends['data'].each do |data|	
@@ -260,7 +260,7 @@ end
 #Siri will send you a list of your likes using a SiriAddViews (The same frame like WoflramAlpha) 
 #Finished--
 listen_for /my facebook likes/i do
-	page = HTTParty.get("https://graph.facebook.com/me/likes&access_token=#{self.access_token}").body rescue nil
+	page = HTTParty.get("https://graph.facebook.com/#{self.username}/likes&access_token=#{self.access_token}").body rescue nil
 	likes = JSON.parse(page) rescue nil
 	
 	likes['data'].each do |data|
@@ -358,7 +358,7 @@ listen_for /facebook status (.+)/i do |facebookText|
         Thread.new {
             begin
                 page = HTTParty.post(
-                                     "https://graph.facebook.com/me/feed",
+                                     "https://graph.facebook.com/#{self.username}/feed",
                                      :query => {
                                      :message => (facebookText),
                                      :access_token => (access_token)
@@ -388,7 +388,7 @@ end
 #with your pofilepicture, your name, your gender, your birthday, your facebook link, your facebook ID
 #Finished--
 listen_for /my facebook profile/i do
-     userjson = HTTParty.get("https://graph.facebook.com/me?fields=link,id,name,picture,gender&access_token=#{self.access_token}").body rescue nil #profile informations
+     userjson = HTTParty.get("https://graph.facebook.com/#{self.username}?fields=link,id,name,picture,gender&access_token=#{self.access_token}").body rescue nil #profile informations
   
 user = JSON.parse(userjson) rescue nil
 name = "#{user['name']}"
