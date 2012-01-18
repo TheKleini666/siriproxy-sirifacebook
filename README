@@ -29,6 +29,8 @@ Persmissions you need:
 -share_item
 -create_note
 -manage_friendlists
+-!!offline_access!! (You will find that under "Extended permissions")
+
 
 WHEN I UPDATE THIS SIRIPROXY PLUGIN AND I ADD NEW COMMANDS, I ADD ALSO NEW PERSMISSIONS!!!
 
